@@ -96,12 +96,27 @@ const ResultsScreen: React.FC<ResultsScreenProps> = ({
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button
-            onClick={onRestart}
-            className="btn-primary px-8 py-3 rounded-lg text-white font-semibold"
-          >
-            Try Again
-          </button>
+  <button
+    onClick={onRestart}
+    style={{
+      backgroundColor: "#f5f5f5",       // light gray key color
+      color: "#333",                    // dark text
+      fontWeight: "600",
+      padding: "12px 32px",
+      borderRadius: "6px",              // rounded like a key
+      border: "2px solid #ccc",         // subtle border
+      boxShadow: "0 4px #999",          // bottom shadow for raised effect
+      fontFamily: "monospace",          // typewriter/keyboard vibe
+      cursor: "pointer",
+      transition: "all 0.2s ease-in-out"
+    }}
+    onMouseDown={(e) => e.currentTarget.style.boxShadow = "0 2px #666"}
+    onMouseUp={(e) => e.currentTarget.style.boxShadow = "0 4px #999"}
+  >
+    Try Again
+  </button>
+</div>
+
           
           {onJoinRace && (
             <button
@@ -133,3 +148,4 @@ const ResultsScreen: React.FC<ResultsScreenProps> = ({
 };
 
 export default ResultsScreen;
+
